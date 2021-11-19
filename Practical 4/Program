@@ -1,0 +1,55 @@
+class test{
+    var a:Int = 10 //public
+
+    private var a1:Int = 123
+    def display1():Unit ={
+        a1 = 1
+        println("Private val from test class: "+a)
+    }
+
+    protected var a2:Int = 123
+    def display2():Unit={
+        a2 = 0
+        println("Protected val from test class: "+a)
+    }
+}
+
+class extended extends test{
+   
+    def display2_1():Unit={
+        a2 = 60
+        println("Protected val from extended class: "+a)
+    }
+}
+
+object AccessModifiers{
+    def add(a: Int, b: Int): Unit = {
+        var sum: Int = a+b
+        println ("Sum of "+a+" and "+b+" is: "+sum)
+        return
+    }
+
+    def main(args: Array[String]):Unit = 
+          {
+        println("1. Add 2 numbers \n2. See how Access Modifiers function")
+        val choice: Int = scala.io.StdIn.readLine("Enter your choice: ").toInt
+        if (choice == 1){
+            var a: Int = scala.io.StdIn.readLine("Enter 1st value: ").toInt
+            var b: Int = scala.io.StdIn.readLine("Enter 2nd value: ").toInt
+            
+            a = 60
+            add(a,b)
+        }
+        else if (choice == 2){
+            var x = new test()
+            var y = new extended()
+            println("Public val from main method: "+x.a) 
+
+            x.display1() 
+
+            x.display2() 
+            y.display2_1() 
+        }
+        else println("Wrong input for choice!")
+    }
+}
