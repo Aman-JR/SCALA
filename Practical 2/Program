@@ -1,0 +1,44 @@
+import java.util._
+import io.StdIn._
+
+class  Calculator(val a:Int, val b:Int){
+
+    var ans:Int  = 0
+
+    def add(x:Int, y:Int): Int ={
+        x+y
+           
+    }
+    def subtraction(x:Int,y:Int): Int = {
+       
+        x-y
+    }
+    def multiply(x:Int , y:Int): Int ={
+  
+         x*y
+      
+    }
+    def divide(x:Int, y:Int): Int ={
+       
+        x/y
+        
+    }
+}
+
+object calculate{
+    def main(args : Array[String]) : Unit = 
+    {
+        println("Enter the first Number : ")
+        var x:Int = readInt()
+        println("Enter the Second Number")
+        var y:Int = readInt()
+
+        var v1 = new Calculator(x,y);
+
+        println("Adding "+x+" and "+y+" will give : "+v1.add(x,y))
+        println("Subtracting " +x+" and "+y+" : "+v1.subtraction(x,y))
+        println("Multiplying "+x+" and "+y+" : "+v1.multiply(x,y))
+        println("Dividing "+x+" and "+y+" : "+v1.divide(x,y))
+
+    }
+}
